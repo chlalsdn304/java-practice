@@ -1,1 +1,9 @@
+public class Main {
+    public static void main(String[] args) {
+        int round = 10;
+        final double PI = 3.14;
+        double dnjs = round * round * PI;
+        System.out.println(dnjs);
 
+    }
+}
