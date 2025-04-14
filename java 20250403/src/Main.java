@@ -19,14 +19,18 @@ public class Main {
         sum = kor+eng+math+sci;
         intAvg = (int)(sum/4);
         doubleAvg = sum/4;
-        //boolResult=intAvg==doubleAvg;
+        boolResult=intAvg==doubleAvg;
 
         System.out.printf("총점: %.2f\n",sum);
         System.out.printf("int 평균값: %d\n",intAvg);
         System.out.printf("double 평균값: %.2f\n",doubleAvg);
+        System.out.println("정수 실수 값 비교: "+boolResult);
 
-
-
+        if (doubleAvg>80){
+            System.out.print("합격");
+        }else{
+            System.out.print("불합격");
+        }
 
     }
 }
