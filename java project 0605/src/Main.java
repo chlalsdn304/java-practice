@@ -38,28 +38,38 @@ public class Main {
 
 
             }else if (choice == 3) {
-                    // 예약 취소
-                    System.out.print("취소할 좌석 번호를 입력하세요 (1~10): ");
-                    int num = sc.nextInt();
-                    sc.nextLine();
+                // 예약 취소
+                System.out.print("취소할 좌석 번호를 입력하세요 (1~10): ");
+                int num = sc.nextInt();
+                sc.nextLine();
 
-                    if (num < 1 || num > 10) {
-                        System.out.println("잘못된 좌석 번호입니다.");
-                    } else if (seats[num - 1] == null) {
-                        System.out.println("예약되지 않은 좌석입니다.");
+                if (num < 1 || num > 10) {
+                    System.out.println("잘못된 좌석 번호입니다.");
+                } else if (seats[num - 1] == null) {
+                    System.out.println("예약되지 않은 좌석입니다.");
+                } else {
+                    System.out.print("예약자 이름을 입력하세요: ");
+                    String name = sc.nextLine();
+
+                    if (seats[num - 1].equals(name)) {
+                        seats[num - 1] = null;
+                        System.out.println("예약이 취소되었습니다.");
                     } else {
-                        System.out.print("예약자 이름을 입력하세요: ");
-                        String name = sc.nextLine();
-
-                        if (seats[num - 1].equals(name)) {
-                            seats[num - 1] = null;
-                            System.out.println("예약이 취소되었습니다.");
-                        } else {
-                            System.out.println("이름이 일치하지 않습니다. 취소할 수 없습니다.");
-                        }
+                        System.out.println("이름이 일치하지 않습니다. 취소할 수 없습니다.");
                     }
+                }
+
+            }else if (choice == 4) {
+                    // 종료
+                    System.out.println("프로그램을 종료합니다.");
+                    break;
+
+                } else {
+                    System.out.println("잘못된 메뉴입니다.");
+                }
 
 
+            sc.close();
 
             }
         }
@@ -74,7 +84,7 @@ public class Main {
                         }
                     }
                 }
-            }
+            
 
                 
                 
