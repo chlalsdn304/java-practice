@@ -15,4 +15,17 @@ public class ReservationManager {
             System.out.println("예약이 완료되었습니다.");
         }
     }
+
+    public void cancelReservation(int num, String name) {
+        if (num < 1 || num > 10) {
+            System.out.println("잘못된 좌석 번호입니다.");
+        } else if (seatManager.getSeat(num - 1) == null) {
+            System.out.println("예약되지 않은 좌석입니다.");
+        } else if (!seatManager.getSeat(num - 1).equals(name)) {
+            System.out.println("이름이 일치하지 않습니다. 취소할 수 없습니다.");
+        } else {
+            seatManager.setSeat(num - 1, null);
+            System.out.println("예약이 취소되었습니다.");
+        }
+    }
 }
